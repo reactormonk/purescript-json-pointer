@@ -18,4 +18,6 @@ You can edit this file as you like.
     ./packages.dhall
 , sources =
     [ "src/**/*.purs", "test/**/*.purs" ]
+, license = "MIT"
+, repository = "https://github.com/reactormonk/purescript-json-pointer.git"
 }
