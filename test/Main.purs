@@ -37,10 +37,10 @@ main = launchAff_ $ runSpec [consoleReporter] do
     let
       jqSamples = [
           { foreign: (Left $ pure $ F.ErrorAtProperty "a/b" (F.ForeignError "error") :: E String)
-          , msg: pure "jq .a/b # to display the json at (ForeignError \"error\")"
+          , msg: pure "jq '.a/b' # to display the json at (ForeignError \"error\")"
           }
         , { foreign: (Left $ pure $ F.ErrorAtProperty "foo" $ F.ErrorAtIndex 0 (F.ForeignError "error") :: E String)
-          , msg: pure "jq .foo[0] # to display the json at (ForeignError \"error\")"
+          , msg: pure "jq '.foo[0]' # to display the json at (ForeignError \"error\")"
           }
       ]
     for_ jqSamples $ \obj ->

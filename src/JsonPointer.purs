@@ -47,7 +47,7 @@ jqE (Left err) =
     asJqPath (ArrayPointer i)  = "[" <> show i <> "]"
     asJqPath (ObjectPointer o) = "." <> o
   in Left $ parsed <#> (\p ->
-    "jq " <> (joinWith "" $ asJqPath <$> (unwrap p.pointer)) <> " # to display the json at " <> show p.error
+    "jq '" <> (joinWith "" $ asJqPath <$> (unwrap p.pointer)) <> "' # to display the json at " <> show p.error
   )
 jqE (Right res) = Right $ res
 
